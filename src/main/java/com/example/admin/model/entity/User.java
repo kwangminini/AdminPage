@@ -2,6 +2,7 @@ package com.example.admin.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @Entity
+@NoArgsConstructor
 //@Table(name="user") 테이블 이름이 Class이름과 동일하다면 생략 가능
 public class User {
     @Id
