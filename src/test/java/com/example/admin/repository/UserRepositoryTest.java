@@ -4,6 +4,7 @@ package com.example.admin.repository;
 import com.example.admin.AdminApplicationTests;
 import com.example.admin.model.entity.Item;
 import com.example.admin.model.entity.User;
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,29 +23,51 @@ public class UserRepositoryTest extends AdminApplicationTests {
 
     @Test
     public void create(){
+//        User user = new User();
+//        user.setAccount("TestUser03");
+//        user.setEmail("TestUser03@gmail.com");
+//        user.setPhoneNumber("010-1111-3333");
+//        user.setCreatedAt(LocalDateTime.now());
+//        user.setCreatedBy("TestUser3");
+//
+//        User newUser = userRepository.save(user);
+//        System.out.println("newUser::::"+newUser);
+        String account = "Test01";
+        String password = "Test01";
+        String status = "REGISTERED";
+        String email = "TEST01@gmail.com";
+        String phoneNumber = "010-1111-2222";
+        LocalDateTime registeredAt = LocalDateTime.now();
+        LocalDateTime createdAt = LocalDateTime.now();
+        String createdBy = "AdminServer";
+
         User user = new User();
-        user.setAccount("TestUser03");
-        user.setEmail("TestUser03@gmail.com");
-        user.setPhoneNumber("010-1111-3333");
-        user.setCreatedAt(LocalDateTime.now());
-        user.setCreatedBy("TestUser3");
+        user.setAccount(account);
+        user.setPassword(password);
+        user.setStatus(status);
+        user.setEmail(email);
+        user.setPhoneNumber(phoneNumber);
+        user.setRegisteredAt(registeredAt);
+        user.setCreatedAt(createdAt);
+        user.setCreatedBy(createdBy);
 
         User newUser = userRepository.save(user);
-        System.out.println("newUser::::"+newUser);
-
+        Assert.assertNotNull(newUser);
     }
     @Test
     @Transactional
     public void read(){
+        User user = userRepository.findFirstByPhoneNumberOrderByIdDesc("010-1111-2222");
+        Assert.assertNotNull(user);
         //Optional<User> user = userRepository.findById(1L);
-        Optional<User> user = userRepository.findByAccount("TestUser03");
+       /* Optional<User> user = userRepository.findByAccount("TestUser03");
         user.ifPresent(selectUser->{
             selectUser.getOrderDetailList().stream().forEach(detail->{
                 Item item = detail.getItem();
 
                 System.out.println(item);
             });
-        });
+        });*/
     }
     @Test
     @Transactional

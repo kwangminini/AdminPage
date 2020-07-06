@@ -27,6 +27,7 @@ public class ItemRepositoryTest extends AdminApplicationTests{
 
         Item newItem = itemRepository.save(item);
         assertNotNull(newItem);
+
     }
 
     @Test
