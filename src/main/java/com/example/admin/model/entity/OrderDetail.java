@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.swing.plaf.BorderUIResource;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -26,6 +27,10 @@ public class OrderDetail {
     private String createdBy;
     private LocalDateTime updatedAt;
     private String updatedBy;
+
+    private Long itemId;
+
+    private Long orderGroupId;
 //    @ManyToOne
 //    private User user;
 //
