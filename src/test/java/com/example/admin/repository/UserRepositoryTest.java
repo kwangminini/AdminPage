@@ -50,6 +50,7 @@ public class UserRepositoryTest extends AdminApplicationTests {
         user.setRegisteredAt(registeredAt);
         user.setCreatedAt(createdAt);
         user.setCreatedBy(createdBy);
+        //User u = User.builder().account(account).password(password).build(); builder - create할 때 편
 
         User newUser = userRepository.save(user);
         Assert.assertNotNull(newUser);
@@ -59,6 +60,9 @@ public class UserRepositoryTest extends AdminApplicationTests {
     public void read(){
         User user = userRepository.findFirstByPhoneNumberOrderByIdDesc("010-1111-2222");
 
+
+        //user.setEmail("").setPhoneNumber("").setStatus(""); chaining - update할 때 편함
+        //User u = new User().setAccount("").setPassword(""); chaining
         user.getOrderGroupList().stream().forEach(orderGroup -> {
             System.out.println("--------------주문묶음--------------");
             System.out.println("수령인 : "+orderGroup.getRevName());
