@@ -1,4 +1,4 @@
-package com.example.admin.model.network.request;
+package com.example.admin.model.network.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @Accessors(chain = true)
-public class PartnerApiRequest {
+public class PartnerApiResponse {
     private Long id;
     private String name;
     private String status;
