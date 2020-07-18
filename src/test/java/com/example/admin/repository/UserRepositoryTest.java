@@ -4,6 +4,7 @@ package com.example.admin.repository;
 import com.example.admin.AdminApplicationTests;
 import com.example.admin.model.entity.Item;
 import com.example.admin.model.entity.User;
+import com.example.admin.model.enumclass.UserStatus;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class UserRepositoryTest extends AdminApplicationTests {
 //        System.out.println("newUser::::"+newUser);
         String account = "Test01";
         String password = "Test01";
-        String status = "REGISTERED";
+        UserStatus status = UserStatus.REGISTERED;
         String email = "TEST01@gmail.com";
         String phoneNumber = "010-1111-2222";
         LocalDateTime registeredAt = LocalDateTime.now();
