@@ -1,15 +1,15 @@
 package com.example.admin.sample;
 
-import com.example.study.StudyApplicationTests;
-import com.example.study.model.entity.Item;
-import com.example.study.model.entity.OrderDetail;
-import com.example.study.model.entity.OrderGroup;
-import com.example.study.model.entity.User;
-import com.example.study.model.enumclass.OrderType;
-import com.example.study.repository.ItemRepository;
-import com.example.study.repository.OrderDetailRepository;
-import com.example.study.repository.OrderGroupRepository;
-import com.example.study.repository.UserRepository;
+import com.example.admin.AdminApplicationTests;
+import com.example.admin.model.entity.Item;
+import com.example.admin.model.entity.OrderDetail;
+import com.example.admin.model.entity.OrderGroup;
+import com.example.admin.model.entity.User;
+import com.example.admin.model.enumclass.OrderType;
+import com.example.admin.repository.ItemRepository;
+import com.example.admin.repository.OrderDetailRepository;
+import com.example.admin.repository.OrderGroupRepository;
+import com.example.admin.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Random;
 
 @Slf4j
-public class OrderDetailSample extends StudyApplicationTests {
+public class OrderDetailSample extends AdminApplicationTests {
 
     private Random random = new Random();
 

@@ -1,14 +1,13 @@
 package com.example.admin.sample;
 
-import com.example.study.StudyApplicationTests;
-import com.example.study.model.entity.Category;
-import com.example.study.model.entity.Item;
-import com.example.study.model.entity.Partner;
-import com.example.study.model.enumclass.ItemStatus;
-import com.example.study.repository.CategoryRepository;
-import com.example.study.repository.ItemRepository;
-import com.example.study.repository.PartnerRepository;
-import com.sun.xml.internal.ws.util.CompletedFuture;
+import com.example.admin.AdminApplicationTests;
+import com.example.admin.model.entity.Category;
+import com.example.admin.model.entity.Item;
+import com.example.admin.model.entity.Partner;
+import com.example.admin.model.enumclass.ItemStatus;
+import com.example.admin.repository.CategoryRepository;
+import com.example.admin.repository.ItemRepository;
+import com.example.admin.repository.PartnerRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ import java.util.List;
 import java.util.Random;
 
 @Slf4j
-public class ItemSample extends StudyApplicationTests {
+public class ItemSample extends AdminApplicationTests {
 
     private Random random = new Random();
 

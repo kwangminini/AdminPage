@@ -1,13 +1,10 @@
 package com.example.admin.sample;
 
-import com.example.study.StudyApplicationTests;
-import com.example.study.model.entity.AdminUser;
-import com.example.study.model.entity.User;
-import com.example.study.model.enumclass.UserStatus;
-import com.example.study.repository.AdminUserRepository;
-import com.example.study.repository.UserRepository;
+import com.example.admin.AdminApplicationTests;
+import com.example.admin.model.entity.User;
+import com.example.admin.model.enumclass.UserStatus;
+import com.example.admin.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.Random;
 
 @Slf4j
-public class UserSample extends StudyApplicationTests {
+public class UserSample extends AdminApplicationTests {
 
     private Random random;
 
@@ -41,8 +38,7 @@ public class UserSample extends StudyApplicationTests {
                     .registeredAt(getRandomDate())
                     .unregisteredAt(status.equals(UserStatus.UNREGISTERED) ? getRandomDate() : null )
                     .build();
-
-            log.info("{}",user);
+//            log.info("{}",user);
             userRepository.save(user);
         }
 

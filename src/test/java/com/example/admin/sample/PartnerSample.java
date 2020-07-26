@@ -1,10 +1,10 @@
 package com.example.admin.sample;
 
-import com.example.study.StudyApplicationTests;
-import com.example.study.model.entity.Category;
-import com.example.study.model.entity.Partner;
-import com.example.study.repository.CategoryRepository;
-import com.example.study.repository.PartnerRepository;
+import com.example.admin.AdminApplicationTests;
+import com.example.admin.model.entity.Category;
+import com.example.admin.model.entity.Partner;
+import com.example.admin.repository.CategoryRepository;
+import com.example.admin.repository.PartnerRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Random;
 
 @Slf4j
-public class PartnerSample extends StudyApplicationTests {
+public class PartnerSample extends AdminApplicationTests {
 
     private Random random;
 
@@ -51,7 +51,7 @@ public class PartnerSample extends StudyApplicationTests {
                         .unregisteredAt(status.equals("UNREGISTERED") ? getRandomDate() : null )
                         .build();
 
-                log.info("{}",partner);
+                //log.info("{}",partner);
                 partnerRepository.save(partner);
             }
         }
