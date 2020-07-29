@@ -1,11 +1,9 @@
 package com.example.admin.service;
 
-import com.example.admin.ifs.CrudInterface;
 import com.example.admin.model.entity.Item;
 import com.example.admin.model.network.Header;
 import com.example.admin.model.network.request.ItemApiRequest;
 import com.example.admin.model.network.response.ItemApiResponse;
-import com.example.admin.repository.ItemRepository;
 import com.example.admin.repository.PartnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -83,7 +81,7 @@ public class ItemApiLogicService extends BaseService<ItemApiRequest, ItemApiResp
                 .orElseGet(()->Header.ERROR("데이터 없음"));
     }
 
-    private Header<ItemApiResponse> response(Item item){
+    public Header<ItemApiResponse> response(Item item){
         ItemApiResponse body = ItemApiResponse.builder()
                 .id(item.getId())
                 .status(item.getStatus())

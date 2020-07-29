@@ -1,13 +1,10 @@
 package com.example.admin.service;
 
-import com.example.admin.ifs.CrudInterface;
 import com.example.admin.model.entity.OrderGroup;
 import com.example.admin.model.network.Header;
 import com.example.admin.model.network.request.OrderGroupApiRequest;
 import com.example.admin.model.network.response.OrderGroupApiResponse;
-import com.example.admin.repository.OrderGroupRepository;
 import com.example.admin.repository.UserRepository;
-import com.fasterxml.jackson.databind.ser.Serializers;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -84,7 +81,7 @@ public class OrderGroupApiLogicService extends BaseService<OrderGroupApiRequest,
                 })
                 .orElseGet(()->Header.ERROR("데이터 없음"));
     }
-    private Header<OrderGroupApiResponse> response(OrderGroup orderGroup){
+    public Header<OrderGroupApiResponse> response(OrderGroup orderGroup){
         OrderGroupApiResponse body = OrderGroupApiResponse.builder()
                 .id(orderGroup.getId())
                 .status(orderGroup.getStatus())
