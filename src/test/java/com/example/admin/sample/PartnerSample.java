@@ -52,6 +52,7 @@ public class PartnerSample extends AdminApplicationTests {
                         .build();
 
                 //log.info("{}",partner);
+                System.out.println();
                 partnerRepository.save(partner);
             }
         }
